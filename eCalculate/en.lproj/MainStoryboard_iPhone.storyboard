@@ -1,23 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Ecalculate View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ecalculateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-90-sWh">
+                                <accessibility key="accessibilityConfiguration" hint="Please Enter a number"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="AZV-5o-81t"/>
+                                    <constraint firstAttribute="height" constant="30" id="PSu-yG-OLx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQS-UN-XGe">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="eQw-6g-Nik"/>
+                                    <constraint firstAttribute="height" constant="216" id="hhO-8x-i1w"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEN-tA-Me3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpu-nM-e7L">
+                                <accessibility key="accessibilityConfiguration" hint="Please Enter a number"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="56e-Sb-Z8r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXS-Dn-afL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="mbF-lt-1Cm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateTwoValuesWithOperator:" destination="2" eventType="touchUpInside" id="bid-6h-xLu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BIE-4V-kSg">
+                                <color key="backgroundColor" red="0.28399149880000002" green="0.43178037600000002" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="wWo-uM-lYe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrJ-cQ-7ca">
+                                <items>
+                                    <navigationItem title="Calculator" id="K2p-gW-pEt"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="( + )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmS-kY-8m0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Oc5-CK-csI"/>
+                                    <constraint firstAttribute="width" constant="59" id="dDr-dV-L9K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kpu-nM-e7L" firstAttribute="top" secondItem="bEN-tA-Me3" secondAttribute="top" type="default" id="0Sn-lE-dRY"/>
+                            <constraint firstItem="EJl-90-sWh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="55" id="3JZ-6a-zJd"/>
+                            <constraint firstItem="kpu-nM-e7L" firstAttribute="bottom" secondItem="EJl-90-sWh" secondAttribute="bottom" type="default" id="BVK-ho-bpt"/>
+                            <constraint firstItem="EJl-90-sWh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="12" id="J7u-gW-9df"/>
+                            <constraint firstAttribute="trailing" secondItem="MXS-Dn-afL" secondAttribute="trailing" constant="15" id="Joc-h7-yVR"/>
+                            <constraint firstItem="pQS-UN-XGe" firstAttribute="top" secondItem="YmS-kY-8m0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ND4-dd-Iha"/>
+                            <constraint firstItem="BIE-4V-kSg" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="73" id="Qdk-8Y-Syf"/>
+                            <constraint firstItem="IrJ-cQ-7ca" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ZbM-xh-kcU"/>
+                            <constraint firstItem="IrJ-cQ-7ca" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-3" id="Zgf-Zr-yDY"/>
+                            <constraint firstItem="BIE-4V-kSg" firstAttribute="centerX" secondItem="bEN-tA-Me3" secondAttribute="centerX" type="default" id="ah0-TW-oa8"/>
+                            <constraint firstItem="BIE-4V-kSg" firstAttribute="centerX" secondItem="pQS-UN-XGe" secondAttribute="centerX" type="default" id="axz-KK-L7M"/>
+                            <constraint firstItem="MXS-Dn-afL" firstAttribute="bottom" secondItem="kpu-nM-e7L" secondAttribute="bottom" type="default" id="eTy-2H-pZg"/>
+                            <constraint firstItem="bEN-tA-Me3" firstAttribute="top" secondItem="EJl-90-sWh" secondAttribute="top" type="default" id="fxi-2a-W2M"/>
+                            <constraint firstItem="MXS-Dn-afL" firstAttribute="top" secondItem="kpu-nM-e7L" secondAttribute="top" type="default" id="psM-rI-C4k"/>
+                            <constraint firstAttribute="trailing" secondItem="kpu-nM-e7L" secondAttribute="trailing" constant="89" id="rZr-px-f3p"/>
+                            <constraint firstAttribute="bottom" secondItem="BIE-4V-kSg" secondAttribute="bottom" constant="101" id="s2R-tv-azR"/>
+                            <constraint firstItem="YmS-kY-8m0" firstAttribute="baseline" secondItem="EJl-90-sWh" secondAttribute="baseline" type="default" id="t1K-Ed-wFQ"/>
+                            <constraint firstItem="IrJ-cQ-7ca" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="wZc-jV-eJr"/>
+                            <constraint firstItem="YmS-kY-8m0" firstAttribute="leading" secondItem="EJl-90-sWh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xys-13-bwD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numField1" destination="EJl-90-sWh" id="iVv-sy-cK7"/>
+                        <outlet property="numField2" destination="kpu-nM-e7L" id="NwK-XX-xdO"/>
+                        <outlet property="numField3" destination="BIE-4V-kSg" id="zQG-Qd-3yD"/>
+                        <outlet property="operatorLabel" destination="YmS-kY-8m0" id="N0I-ab-oP3"/>
+                        <outlet property="pickerViewOperator" destination="pQS-UN-XGe" id="yuZ-og-O8Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31" y="32"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ecalculateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ecalculateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="calculateTwoValuesWithOperator:"/>
+                <relationship kind="outlet" name="numField1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numField2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numField3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="operatorLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerViewOperator" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

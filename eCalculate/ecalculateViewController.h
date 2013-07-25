@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ecalculateViewController : UIViewController
+@interface ecalculateViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
+
+@property (strong,nonatomic) NSArray *operatorArray;
+@property (strong,nonatomic) NSString *userOperatorSelected;
 
 @end
